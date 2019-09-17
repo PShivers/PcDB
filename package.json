@@ -4,7 +4,9 @@
   "description": "Pcdb is the Podcast Database version 2! It is built on the MERN stack instead of Django and python back-end.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev": "concurrently \"node server.js\" \"cd client && npm start\"",
+    "test": "test",
+    "start": "node server.js"
   },
   "author": "Paul Shivers",
   "license": "ISC",
