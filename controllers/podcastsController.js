@@ -3,18 +3,27 @@ const API_KEY = process.env.REACT_APP_LISTEN_API_KEY;
 const axios = require('axios');
 
 const PodcastsController = {
-  indexPopular: async (req, res) => {
-    console.log(API_KEY)
-    try {
-      const popularPodcasts = await axios.get(
-        'https://listen-api.listennotes.com/api/v2/best_podcasts?genre_id=93&page=2&region=us&safe_mode=1',
-        { headers: { 'X-ListenAPI-Key': API_KEY } }
-      );
-      res.json(popularPodcasts);
-    } catch (err) {
-      console.log(err);
-    }
-  },
+
+//   indexPopular: axios
+//     .get(
+//       'https://listen-api.listennotes.com/api/v2/best_podcasts?page=2&region=us&safe_mode=1',
+//       { headers: { 'X-ListenAPI-Key': API_KEY } }
+//     )
+//     .then(resp => {
+//       res.send(resp) ;
+//     }),
+
+    indexPopular: async (req, res) => {
+      try {
+        const popularPodcasts = await axios.get(
+          'https://listen-api.listennotes.com/api/v2/best_podcasts?page=2&region=us&safe_mode=1',
+          { headers: { 'X-ListenAPI-Key': API_KEY } }
+        );
+        res.send(popularPodcasts);
+      } catch (err) {
+        console.log(err);
+      }
+    },
 
   index: async (req, res) => {
     try {
