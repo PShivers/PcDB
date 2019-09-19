@@ -4,16 +4,16 @@ import {Header, Menu, Dropdown} from 'semantic-ui-react'
 class NavBar extends Component {
   render() {
     return (
-      <Menu>
-        <Dropdown item text='Browse Podcasts'>
-          <Dropdown.Menu>
-            <Dropdown.Header>Browse By</Dropdown.Header>
-            <Dropdown.Item>Popular</Dropdown.Item>
+      <Menu className = 'inverted'>
+        <Dropdown item text='Browse Podcasts' style={{color: '#d79922'}}>
+          <Dropdown.Menu style={{color: '#d79922'}}>
+            <Dropdown.Header style={{color: '#f13c20'}}>Browse By</Dropdown.Header>
+            <Dropdown.Item >Popular</Dropdown.Item>
             <Dropdown.Item>Genre</Dropdown.Item>
             <Dropdown.Item>Newest</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <Menu.Item name='Users'/>
+        <Menu.Item name='Users' style={{color: '#d79922'}}/>
       </Menu>
     )
   }

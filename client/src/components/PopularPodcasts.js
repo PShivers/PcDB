@@ -25,12 +25,12 @@ class PopularPodcasts extends Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
-        backgroundColor: "rgba(255,0,0,.8)"
+        backgroundColor: "#1a1a1d"
       }}>
         {this
           .state

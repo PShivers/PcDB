@@ -7,7 +7,7 @@ class App extends Component {
   state = {}
   render() {
     return (
-      <div>
+      <div style={{backgroundColor: '#efe2ba'}}>
         <Header />
         <PopularPodcasts/>
         <Podcast />
