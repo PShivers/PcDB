@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const usersController = require('../controllers/usersController.js');
+const podcastsController = require('../controllers/podcastsController.js');
 
-router.get('/users', usersController.index);
-router.post('/users', usersController.create);
+router.get('/podcasts', podcastsController.indexPopular);
+router.post('/podcasts', podcastsController.create);
 
-router.get('/users/:id', usersController.show);
-router.put('/users/:id', usersController.update);
-router.delete('/users/:id', usersController.delete);
+router.get('/podcasts/:id', podcastsController.show);
+router.put('/podcasts/:id', podcastsController.update);
+router.delete('/podcasts/:id', podcastsController.delete);
 
 module.exports = router;
-
