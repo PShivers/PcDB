@@ -5,9 +5,9 @@ import{getPopularPodcasts} from '../ajax'
      state = { podcasts:[] }
 
      componentDidMount(){
-         getPopularPodcasts().then(res=>{
-             this.setState({podcasts:res.data})
-         })
+        //  getPopularPodcasts().then(res=>{
+        //      this.setState({podcasts:res.data})
+        //  })
      }
 
 

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const podcastsController = require('../controllers/podcastsController.js');
 
-router.get('/podcasts', podcastsController.indexPopular);
+router.get('/popularpodcasts', podcastsController.indexPopular);
 router.post('/podcasts', podcastsController.create);
 
 router.get('/podcasts/:id', podcastsController.show);
