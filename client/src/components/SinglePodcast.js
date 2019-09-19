@@ -11,15 +11,26 @@ class SinglePodcast extends Component {
 
     const content = (
       <div >
-        <div inverted style={{ fontSize: '1vw', color: '#f13c20'}}>
+        <div
+          inverted
+          style={{
+          fontSize: '1vw',
+          color: '#d79922'
+        }}>
           {this.props.podcast.description}
         </div>
       </div>
     )
+
+    
     return (
-      <div class="ui link cards" style={{
+      <div
+        class="ui link cards"
+        style={{
         margin: '6px'
-      }}>
+      }}
+        onClick={this.props.toggle}
+        key={this.props.podcast.id}>
         <div class="card">
           <Dimmer.Dimmable
             as={Image}
@@ -32,13 +43,21 @@ class SinglePodcast extends Component {
             onMouseLeave={this.handleHide}
             size='medium'
             src={this.props.podcast.image}></Dimmer.Dimmable>
-          <div class="content" style={{backgroundColor: '#efe2ba'}}>
+          <div
+            class="content"
+            style={{
+            backgroundColor: '#efe2ba'
+          }}>
             <div class="header">{this.props.podcast.title}</div>
             <div class="meta">
               from: {this.props.podcast.publisher}
             </div>
           </div>
-          <div class="extra content" style={{backgroundColor: '#d79922'}}>
+          <div
+            class="extra content"
+            style={{
+            backgroundColor: '#d79922'
+          }}>
             <span class="right floated">
               Available Episodes: {this.props.podcast.total_episodes}
             </span>
