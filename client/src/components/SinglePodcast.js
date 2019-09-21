@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
-import {Button, Dimmer, Header, Image} from 'semantic-ui-react'
+import { Dimmer, Image} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 class SinglePodcast extends Component {
-  state = {}
+  state = {};
 
-  handleShow = () => this.setState({active: true})
-  handleHide = () => this.setState({active: false})
+  handleShow = () => this.setState({active: true});
+  handleHide = () => this.setState({active: false});
+
   render() {
     const {active} = this.state
 
     const content = (
       <div >
         <div
-          inverted
           style={{
           fontSize: '1vw',
           color: '#d79922'
@@ -20,18 +21,16 @@ class SinglePodcast extends Component {
           {this.props.podcast.description}
         </div>
       </div>
-    )
-
-    
+    );
+    let linkVar = `/podcasts/${this.props.podcast.id}`
     return (
       <div
-        class="ui link cards"
+        className="ui link cards"
+        onClick={()=>this.props.select(this.props.podcast.id)}
         style={{
         margin: '6px'
-      }}
-        onClick={this.props.toggle}
-        key={this.props.podcast.id}>
-        <div class="card">
+      }}>
+        <Link to={linkVar} className="card" >
           <Dimmer.Dimmable
             as={Image}
             dimmed={active}
@@ -44,29 +43,29 @@ class SinglePodcast extends Component {
             size='medium'
             src={this.props.podcast.image}></Dimmer.Dimmable>
           <div
-            class="content"
+            className="content"
             style={{
             backgroundColor: '#efe2ba'
           }}>
-            <div class="header">{this.props.podcast.title}</div>
-            <div class="meta">
+            <div className="header">{this.props.podcast.title}</div>
+            <div className="meta">
               from: {this.props.podcast.publisher}
             </div>
           </div>
           <div
-            class="extra content"
+            className="extra content"
             style={{
             backgroundColor: '#d79922'
           }}>
-            <span class="right floated">
+            <span className="right floated">
               Available Episodes: {this.props.podcast.total_episodes}
             </span>
             <span>
-              <i class="user icon"></i>
+              <i className="user icon"></i>
               Favorited : 75
             </span>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }
